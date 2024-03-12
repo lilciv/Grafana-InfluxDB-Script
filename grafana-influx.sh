@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.0) by lilciv
+# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.1) by lilciv
 
 #Root user check
 RootCheck() {
@@ -123,17 +123,28 @@ Finish() {
     echo Installation complete!
     echo
     echo Your Grafana dashboard is located at https://$grafanadomain
-    echo It has already been configured with your InfluxDB data source! You can now import the latest RSM dashboard.
-    echo The default login is admin/admin.
+    echo It has already been configured with your InfluxDB data source! You can now import the latest RSM dashboard from https://github.com/Pinkstink-Rust/Rust-Server-Metrics/releases/latest
+    echo The default login is admin/admin. Please change this.
     echo
     echo
     echo Your InfluxDB instance is located at https://$influxdomain:8086
     echo
-    echo InfluxDB Username: $dbuser
-    echo InfluxDB Password: $dbpass
-    echo InfluxDB Database Name: db01
+    echo Here is your Rust Server Metrics config below. Just adjust the Server Tag portion:
     echo
-    echo You will need this information to configure the RSM Harmony Mod on your server.
+    echo
+    cat <<EOF
+{
+  "Enabled": true,
+  "Influx Database Url": "https://$influxdomain:8086",
+  "Influx Database Name": "db01",
+  "Influx Database User": "$dbuser",
+  "Influx Database Password": "$dbpass",
+  "Server Tag": "CHANGE-ME",
+  "Debug Logging": false,
+  "Amount of metrics to submit in each request": 1000,
+  "Gather Player Averages (Client FPS, Client Latency, Player FPS, Player Memory, Player Latency, Player Packet Loss)": true
+}
+EOF
     echo
 }
 
