@@ -14,7 +14,7 @@ RootCheck() {
 
 Confirm() {
     clear
-    echo "This will delete your Grafana and InfluxDB instanced! Be sure you want to continue."
+    echo "This will delete your Grafana and InfluxDB instances! Be sure you want to continue."
     read -s -n 1 -p "Press any key to continue . . ."
     echo ""
     DeleteContainers
