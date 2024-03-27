@@ -35,6 +35,6 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 - If you would like to change the retention policy to something else, you can execute the following command (4 week example): `docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password INFLUXDB_ADMIN_PASSWORD -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 4w SHARD DURATION 24h'`
 
 **How do I uninstall this?**
-- To uninstall, please run the uninstall script: ```bash <(curl -s https://civ.sh/tools/ngi/grafana-influx-uninstall.sh | tr -d '\r')```
+- To uninstall, please run the uninstall script: ```bash <(curl -s https://raw.githubusercontent.com/lilciv/Grafana-InfluxDB-Script/main/grafana-influx-uninstall.sh | tr -d '\r')```
 
 If you have any additional questions, feel free to message me on Discord!
