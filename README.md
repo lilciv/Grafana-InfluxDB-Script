@@ -38,3 +38,6 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 - To uninstall, please run the uninstall script: ```bash <(curl -s https://raw.githubusercontent.com/lilciv/Grafana-InfluxDB-Script/main/grafana-influx-uninstall.sh | tr -d '\r')```
 
 If you have any additional questions, feel free to message me on Discord!
+
+## Donate
+Anything you can do to help donate is very much appreciated! https://ko-fi.com/lilciv
