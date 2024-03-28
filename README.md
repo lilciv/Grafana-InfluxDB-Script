@@ -32,7 +32,7 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 
 **What is the InfluxDB Retention Policy?**
 - This will create a 12-week Retention Policy, along with a 24-hour Shard Group Duration as per the Rust Server Metrics recommendations.
-- If you would like to change the retention policy to something else, you can execute the following command (4 week example): `docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password INFLUXDB_ADMIN_PASSWORD -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 4w SHARD DURATION 24h'`
+- If you would like to change the retention policy to something else, first you need to get the INFLUXDB_ADMIN_PASSWORD by running this command: **`docker exec InfluxDB /usr/bin/env`**. Then, you can execute the following command, replacing the INFLUXDB_ADMIN_PASSWORD with your own. This is a 4-week retention example. Adjust the "4w" part as needed: `docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password INFLUXDB_ADMIN_PASSWORD -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 4w SHARD DURATION 24h'`
 
 **How do I uninstall this?**
 - To uninstall, please run the uninstall script: ```bash <(curl -s https://raw.githubusercontent.com/lilciv/Grafana-InfluxDB-Script/main/grafana-influx-uninstall.sh | tr -d '\r')```
