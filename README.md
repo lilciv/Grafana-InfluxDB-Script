@@ -15,7 +15,7 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 # How To Use
 1. SSH to your VPS and run the following command **AS ROOT, not with sudo!**
 - ```bash <(curl -s https://raw.githubusercontent.com/lilciv/Grafana-InfluxDB-Script/main/grafana-influx.sh)```
-2. Enter a **secure** InfluxDB username and password.
+2. Enter a **secure** InfluxDB username and password. Unfortunately, there have been issues when using special characters, such as !*#$%^& - so it is recommend to keep it as a long string of numbers and letters instead.
 3. Enter your Grafana domain as well as your InfluxDB Domain (eg. grafana.example.com and influx.example.com)
 4. Ensure acme.sh is able to succesfully obtain your certificate. If it is not, make sure your firewall ports are opened and try again. This certificate will auto-renew and should not require additional action on your end.
 5. At this point, your setup should be complete. Please follow the Rust Server Metrics instructions to proceed. You should begin at **Step 6**: https://github.com/Pinkstink-Rust/Rust-Server-Metrics
