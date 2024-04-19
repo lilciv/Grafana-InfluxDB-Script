@@ -19,7 +19,7 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 3. Enter your Grafana domain as well as your InfluxDB Domain (eg. grafana.example.com and influx.example.com)
 4. Ensure acme.sh is able to succesfully obtain your certificate. If it is not, make sure your firewall ports are opened and try again. This certificate will auto-renew and should not require additional action on your end.
 5. At this point, your setup should be complete. Please follow the Rust Server Metrics instructions to proceed. You should begin at **Step 6**: https://github.com/Pinkstink-Rust/Rust-Server-Metrics
-	- Note: Your database URL for Rust Server Metrics will be your InfluxDB subdomain with port 8086 - eg. `http(s)://influx.example.com:8086`.
+	- Note: Your database URL for Rust Server Metrics will be your InfluxDB subdomain with port 8086 - eg. `https://influx.example.com:8086`.
   - Note: The InfluxDB datasource is automatically provisioned to Grafana, so you only need to import the latest RSM dashboard
 
 ## FAQ
