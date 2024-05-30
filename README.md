@@ -31,8 +31,8 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 - NOTE: You should use the `INFLUXDB_USER` and `INFLUXDB_USER_PASSWORD`, not the ADMIN credentials when setting up Rust Server Metrics! The admin credentials should only be used if adjusting the retention policy. The standard user has read and write permissions to the `db01` database. Database admin credentials are not needed and not recommended to use for standard access.
 
 **What is the InfluxDB Retention Policy?**
-- This will create a 12-week Retention Policy, along with a 24-hour Shard Group Duration as per the Rust Server Metrics recommendations.
-- If you would like to change the retention policy to something else, first you need to get the INFLUXDB_ADMIN_PASSWORD by running this command: **`docker exec InfluxDB /usr/bin/env`**. Then, you can execute the following command, replacing the INFLUXDB_ADMIN_PASSWORD with your own. This is a 4-week retention example. Adjust the "4w" part as needed: `docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password INFLUXDB_ADMIN_PASSWORD -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 4w SHARD DURATION 24h'`
+- This will create a 4-week Retention Policy, along with a 24-hour Shard Group Duration.
+- If you would like to change the retention policy to something else, first you need to get the INFLUXDB_ADMIN_PASSWORD by running this command: **`docker exec InfluxDB /usr/bin/env`**. Then, you can execute the following command, replacing the INFLUXDB_ADMIN_PASSWORD with your own. This is a 6-week retention example. Adjust the "6w" part as needed: `docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password INFLUXDB_ADMIN_PASSWORD -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 6w SHARD DURATION 24h'`
 
 **How do I uninstall this?**
 - To uninstall, please run the uninstall script: ```bash <(curl -s https://raw.githubusercontent.com/lilciv/Grafana-InfluxDB-Script/main/grafana-influx-uninstall.sh | tr -d '\r')```
