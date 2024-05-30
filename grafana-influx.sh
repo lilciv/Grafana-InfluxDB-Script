@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.1) by lilciv
+# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.2) by lilciv
 
 #Root user check
 RootCheck() {
@@ -117,7 +117,7 @@ Finish() {
     docker restart InfluxDB
     docker restart Grafana
     sleep 3
-    docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password $dbadminpass -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 12w SHARD DURATION 24h'
+    docker exec InfluxDB influx -unsafeSsl -ssl -username influxadmin -password $dbadminpass -execute 'ALTER RETENTION POLICY "autogen" ON "db01" DURATION 4w SHARD DURATION 24h'
     clear
     echo
     echo Installation complete!
