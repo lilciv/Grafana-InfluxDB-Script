@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.2) by lilciv
+# Grafana + InfluxDB Installer for Rust Server Metrics (v.1.0.3) by lilciv
 
 #Root user check
 RootCheck() {
@@ -108,7 +108,7 @@ EOF
 
 #Deploy Grafana
 Grafana() {
-    docker run -d --network web --name Grafana --user 0 --restart unless-stopped -p 443:3000 -v /root/Docker/Volumes/Grafana:/var/lib/grafana -v /etc/letsencrypt/live/$grafanadomain:/etc/ssl/ -v /root/Docker/Volumes/Grafana/provisioning:/etc/grafana/provisioning -e GF_SERVER_CERT_FILE=/etc/ssl/fullchain.pem -e GF_SERVER_CERT_KEY=/etc/ssl/privkey.pem -e GF_SERVER_PROTOCOL=https grafana/grafana:10.3.3
+    docker run -d --network web --name Grafana --user 0 --restart unless-stopped -p 443:3000 -v /root/Docker/Volumes/Grafana:/var/lib/grafana -v /etc/letsencrypt/live/$grafanadomain:/etc/ssl/ -v /root/Docker/Volumes/Grafana/provisioning:/etc/grafana/provisioning -e GF_SERVER_CERT_FILE=/etc/ssl/fullchain.pem -e GF_SERVER_CERT_KEY=/etc/ssl/privkey.pem -e GF_SERVER_PROTOCOL=https grafana/grafana:12.0.2
     Finish
 }
 
