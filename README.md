@@ -6,7 +6,7 @@ https://github.com/Pinkstink-Rust/Rust-Server-Metrics
 
 
 # Prerequisites
-- Linux VPS - I recommend **Hetzner**. They are cheap and reliable. Ubuntu Server 20.04 or 22.04 is the **required** OS. Other OS choices will not work at this time.
+- Linux VPS - I recommend **Hetzner**. They are cheap and reliable. Ubuntu Server 22.04 or 24.04 is the **required** OS. Other OS choices will not work at this time.
 - If you plan on running this InfluxDB with more than one Rust server, I recommend increasing the server storage, as you may run out.
 - Domain Name with two DNS Records - one for Grafana (eg. grafana.example.com) and one for InfluxDB (eg. influx.example.com) - These two records should point to your VPS public IPv4 address. Cloudflare proxying is fine for the Grafana record, but be sure to use DNS only for the Influx one.
 - Firewall rules (if applicable) allowing inbound access to TCP ports **80, 443, and 8086**
