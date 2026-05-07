@@ -123,7 +123,7 @@ Finish() {
     echo Installation complete!
     echo
     echo Your Grafana dashboard is located at https://$grafanadomain
-    echo It has already been configured with your InfluxDB data source! You can now import the latest RSM dashboard from https://github.com/Pinkstink-Rust/Rust-Server-Metrics/releases/latest
+    echo It has already been configured with your InfluxDB data source! You can now import the latest RSM dashboard from https://github.com/RustyMoose/Rust.ServerMetrics/releases/latest
     echo The default login is admin/admin. Please change this.
     echo
     echo
